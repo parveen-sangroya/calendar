@@ -1,0 +1,509 @@
+void engyear(long int y)
+{
+int v,v1,n=0,n1,m,d,j,k,c,c1=2,x=0,x1,t;
+long int y2,i ,l,a,a1;
+ char string[2];
+   setbkcolor(6);
+ processing();
+ y2=y;
+for(i=0;i<=y;i++)
+{
+ if(y>0)
+ {
+  if(i==1753)
+c1=c1-11;
+a=i/100;
+a1=i%100;
+ if(a1==1&&a%4!=0&&i>1750)
+ c1=c1-1;
+ if(i%4==1)
+  {
+  c1=c1+2;
+  c1=c1%7;
+  }
+   else
+   {
+    c1++;
+    c1=c1%7;
+   }
+  }
+ }
+     c=c1;
+      settextstyle(2,0,5);
+cleardevice();
+  rectangle(0,0,639,479);
+ rectangle(5,5,634,474);
+     ultoa(y,string,10);
+ if(y/10==0)
+      outtextxy(322,10,string);
+     else
+     if(y/100==0)
+     outtextxy(316,10,string);
+ else
+ if(y/1000==0)
+      outtextxy(310,10,string);
+     else
+     if(y/10000==0)
+     outtextxy(304,10,string);
+ else
+ if(y/100000==0)
+      outtextxy(298,10,string);
+     else
+     if(y/1000000==10)
+     outtextxy(292,0,string);
+     else
+ if(y/10000000==0)
+      outtextxy(286,10,string);
+     else
+     if(y/100000000==0)
+     outtextxy(280,10,string);
+for(m=1;m<13;m++)
+{
+ setcolor(4);
+	 if(m==1)
+     {
+	  x=37;
+     y=20;
+     x1=x;
+     outtextxy(79,y,"JAN");
+      d=31;
+       n=c;
+       v=(n+1)%7;
+     }
+       else
+       if(m==2)
+       {
+	x1=x=187;
+     y=20;
+	  outtextxy(229,y,"FEB");
+       if(y2%4==0)
+       {
+       if(y2%100==0&&y2%400!=0&&y2>1752)
+       d=28;
+       else
+	d=29;
+	}
+	else
+	d=28;
+	n=c+3;
+	v=(n+1)%7;
+       }
+	if(m==3)
+	{
+			  if(d==29)
+	 {
+	 c++;
+	 }
+	 x1=x=337;
+     y=20;
+ outtextxy(379,y,"MAR");
+	d=31;
+		  n=c+3;
+	  v=(n+1)%7;
+	}
+	 else
+	 if(m==4)
+	 {
+	      x1=x=487;
+     y=20;
+	 outtextxy(529,y,"APR");
+	 d=30;
+	   n=c-1;
+	   v=(n+1)%7;
+	 }
+	  else
+	  if(m==5)
+	  {
+     x1=x=37;
+     y=170;
+	   outtextxy(79,y,"MAY");
+	  d=31;
+	   n=c+1;
+	   v=(n+1)%7;
+	  }
+	  else
+	  if(m==6)
+	  {
+		  x1=x=187;
+     y=170;
+      outtextxy(229,y,"JUN");
+	   d=30;
+	    n=c+4;
+	    v=(n+1)%7;
+	  }
+	    else
+	    if(m==7)
+	    {
+		     x1=x=337;
+     y=170;
+	 outtextxy(379,y,"JUL");
+	    d=31;
+	      n=c-1;
+	      v=(n+1)%7;
+	    }
+	      else
+	      if(m==8)
+	      {
+			x1=x=487;
+     y=170;
+     outtextxy(529,y,"AUG");
+	       d=31;
+	       n=c+2;
+		v=(n+1)%7;
+	      }
+	       else
+	       if(m==9)
+	       {
+		       x=37;
+     y=320;
+     x1=x;
+     outtextxy(79,y,"SEP");
+	       if(y2==1752)
+		d=19;
+	       else
+		d=30;
+	       n=c-2;
+		v=(n+1)%7;
+	       }
+	if(m==10)
+	{
+		if(y2==1752)
+       c=c-4;
+		       x1=x=187;
+     y=320;
+      outtextxy(229,y,"OCT");
+	       d=31;
+		  n=c+0;
+		  v=(n+1)%7;
+		}
+		  else
+		  if(m==11)
+		  {
+			   x1=x=337;
+     y=320;
+	 outtextxy(379,y,"NOV");
+		   d=30;
+		    n=c+3;
+		    v=(n+1)%7;
+		  }
+		  else
+		  if(m==12)
+		  {
+		    x1=x=487;
+     y=320;
+     outtextxy(529,y,"DEC");
+		   d=31;
+		    n=c-2;
+		    v=(n+1)%7;
+		  }
+		  if(v<0)
+		  {v=v+14;
+		  v=v%7;
+		  }
+		x=x-10; y=y+12;
+	for(i=0;i<7;i++)
+	{
+	 if(i==0)
+setcolor(4);
+ else
+ setcolor(7);
+	if(i==0)
+	outtextxy(x,y,"S");
+	 if(i==1)
+	 outtextxy(x,y,"M");
+	 if(i==2)
+	 outtextxy(x,y,"T");
+	 if(i==3)
+	 outtextxy(x,y,"W");
+	 if(i==4)
+	 outtextxy(x,y,"T");
+	 if(i==5)
+	 outtextxy(x,y,"F");
+	 if(i==6)
+	 outtextxy(x,y,"S");
+	 x=x+20;
+	 }
+      x=x1-30;
+      for(k=v;k>0;k--)
+      {
+      x=x+20;
+      outtextxy(x,20,"   ");
+      }
+      y=y+20;
+if(v==0)
+	y=y-20;
+ for(i=1;i<=d;i++)
+{
+l=i;
+if(y2==1752&&m==9)
+{
+if(i>=3)
+{
+l=i+11;
+}
+}
+v1=v+i;
+ultoa(l,string,10);
+ if(v1%7==1)
+setcolor(4);
+ else
+ setcolor(7);
+  if(v1%7!=1)
+  {
+ x=x+20;
+      outtextxy(x,y,string);
+     }
+  else
+  {
+  y=y+20;
+    x=x1-10;
+    outtextxy(x,y,string);
+  }
+ }
+ }
+}
+
+void engmonth(long int y,int m)
+{
+int v,v1,n=0,n1,d,j,k,c,c1=2,x=0,x1;
+long int i,y2,a,a1;
+int l;
+ char string[2];
+ setbkcolor(6);
+y2=y;
+processing();
+for(i=0;i<=y;i++)
+{
+if(i==1753)
+c1=c1+3;
+ a=i/100;
+a1=i%100;
+ if(a1==1&&a%4!=0&&i>1750)
+  c1--;
+  if(i%4==1)
+  {
+  c1=c1+2;
+  c1=c1%7;
+  }
+   else
+   {
+    c1++;
+    c1=c1%7;
+   }
+ }
+     c=c1;
+    settextstyle(8,0,1);
+      cleardevice();
+      ultoa(y,string,10);
+ if(y/10==0)
+      outtextxy(313,20,string);
+     else
+     if(y/100==0)
+     outtextxy(307,20,string);
+ else
+ if(y/1000==0)
+      outtextxy(301,20,string);
+     else
+     if(y/10000==0)
+     outtextxy(295,20,string);
+ else
+ if(y/100000==0)
+      outtextxy(289,20,string);
+     else
+     if(y/1000000==0)
+     outtextxy(283,20,string);
+       else
+ if(y/10000000==0)
+      outtextxy(276,20,string);
+	 else
+     if(y/100000000==0)
+     outtextxy(271,20,string);
+      rectangle(0,0,639,479);
+ rectangle(5,5,634,474);
+setcolor(4);
+	x=273,y=50;
+	 if(m==1)
+     {
+ outtextxy(x+5,y,"JANUARY");
+      d=31;
+       n=c;
+       v=(n+1)%7;
+     }
+       else
+       if(m==2)
+       {
+      outtextxy(x-5,y,"FEBRUARY");
+
+       if(y2%4==0)
+       {
+       if(y2%100==0&&y2%400!=0&&y2>1752)
+       d=28;
+       else
+	d=29;
+	}
+	else
+	d=28;
+	n=c+3;
+	v=(n+1)%7;
+       }
+       if(y2%4==0)
+	 {
+	 c++;
+	 }
+	if(y2%100==0&&y2%400!=0&&y2>1752)
+	c--;
+	if(m==3)
+	{
+	 outtextxy(x+13,y,"MARCH");
+	d=31;
+		  n=c+3;
+	  v=(n+1)%7;
+	}
+	 else
+	 if(m==4)
+	 {
+    outtextxy(x+18,y,"APRIL");
+	 d=30;
+	   n=c-1;
+	   v=(n+1)%7;
+	 }
+	  else
+	  if(m==5)
+	  {
+	   outtextxy(x+26,y,"MAY");
+	  d=31;
+	   n=c+1;
+	   v=(n+1)%7;
+	  }
+	  else
+	  if(m==6)
+	  {
+      outtextxy(x+21,y,"JUNE");
+	   d=30;
+	    n=c+4;
+	    v=(n+1)%7;
+	  }
+	    else
+	    if(m==7)
+	    {
+	 outtextxy(x+21,y,"JULY");
+	    d=31;
+	      n=c-1;
+	      v=(n+1)%7;
+	    }
+	      else
+	      if(m==8)
+	      {
+     outtextxy(x+6,y,"AUGUST");
+	       d=31;
+	       n=c+2;
+		v=(n+1)%7;
+	      }
+	       else
+	       if(m==9)
+	       {
+     outtextxy(x-8,y,"SEPTEMBER");
+	       if(y2==1752)
+		d=19;
+	       else
+		d=30;
+	       n=c-2;
+		v=(n+1)%7;
+	       }
+			if(y2==1752)
+	       c=c-4;
+		if(m==10)
+		{
+      outtextxy(x+4,y,"OCTOBER");
+	   d=31;
+		    n=c+0;
+		  v=(n+1)%7;
+		}
+		  else
+		  if(m==11)
+		  {
+	 outtextxy(x-5,y,"NOVEMBER");
+	      d=30;
+		    n=c+3;
+		    v=(n+1)%7;
+		  }
+		  else
+		  if(m==12)
+		  {
+	 outtextxy(x-5,y,"DECEMBER");
+	   d=31;
+		    n=c-2;
+		    v=(n+1)%7;
+		  }
+	x=30; y=y+50;
+	for(i=0;i<7;i++)
+	{
+	 if(i==0)
+setcolor(4);
+ else
+ setcolor(7);
+	if(i==0)
+	outtextxy(x,y,"SUN");
+	 if(i==1)
+	 outtextxy(x,y,"MON");
+	 if(i==2)
+	 outtextxy(x,y,"TUE");
+	 if(i==3)
+	 outtextxy(x,y,"WED");
+	 if(i==4)
+	 outtextxy(x,y,"THR");
+	 if(i==5)
+	 outtextxy(x,y,"FRI");
+	 if(i==6)
+	 outtextxy(x,y,"SAT");
+	 x=x+90;
+	 }
+      x=30;
+      for(k=v;k>0;k--)
+      {
+      x=x+90;
+      outtextxy(x,20,"   ");
+      }
+      y=y+50;
+   x=x-80;
+ for(i=1;i<=d;i++)
+{
+l=i;
+int date;
+if(y2==1752&&m==9)
+{
+if(i>=3)
+{
+l=i+11;
+if(l==21)
+x=x+10;
+date=l;
+}
+}
+      if(date==24)
+    x=x+10;
+v1=v+i;
+ultoa(l,string,10);
+ if(v1%7==1)
+setcolor(4);
+ else
+ setcolor(7);
+  if(v1%7!=1)
+  {
+       if(i==10)
+x=x-10;
+ x=x+90;
+      outtextxy(x,y,string);
+     }
+  else
+  {
+  y=y+50;
+    x=30;
+      if(date==24)
+    x=x+10;
+    if(i<10)
+x=x+10;
+    outtextxy(x,y,string);
+  }
+ }
+ }

@@ -1,0 +1,43 @@
+void use()
+{
+cleardevice();
+setcolor(6);
+rectangle(0,0,639,479);
+setfillstyle(1,6);
+floodfill(180,250,6);
+setcolor(4);
+settextstyle(8,0,1);
+outtextxy(290,5,"Uses");
+setcolor(7);
+rectangle(5,5,634,474);
+rectangle(0,0,639,479);
+settextstyle(2,0,5);
+outtextxy(20,40,">  The project is very easy to use but very hard to built.");
+outtextxy(20,55,">  we try our best to make it user friendly");
+outtextxy(20,70,"   Menu make it friendly.");
+outtextxy(20,85,">  First of all you choose a option from menu bar.");
+outtextxy(20,100,">  If you want to Exit the Project click on ' = ' sign  ");
+outtextxy(20,115,"   pop up menu will appear click on ' Exit ' .");
+outtextxy(20,130,">  To check the Christian date of a year click on ' Christain ' in menu bar ");
+outtextxy(20,145,"   pop up will appear click on ' Year or Month ' ");
+outtextxy(20,160,"   and it will display the Calendar of that year or month.");
+outtextxy(20,175,">  To check the  Current year click on ' Current ' in menu bar ");
+outtextxy(20,190,"   pop up will appear click on ' Year or Month ' and ");
+outtextxy(20,205,"   it will display the Calendar of the year or month.");
+outtextxy(20,220,">  To check the Shak date of a year click on ' Shak ' in menu bar ");
+outtextxy(20,235,"   pop up will appear click on ' Year or Month ' and ");
+outtextxy(20,250,"   it will display the Calendar of that year or month with Christain date.");
+outtextxy(20,265,">  To check the Vikarmi date of a year click on ' Vikarmi ' in menu bar ");
+outtextxy(20,280,"   pop up will appear click on ' Year or Month ' and ");
+outtextxy(20,295,"   it will display the Calendar of that year or month with Christain date.");
+outtextxy(20,310,">  To check the  Holiday click on ' Holiday ' in menu bar ");
+outtextxy(20,325,"   pop up will appear click on ' Year or Month ' and ");
+outtextxy(20,340,"   it will display the Holiday of that year or month.");
+outtextxy(20,355,">   To check the current date and time click on ' Timing ' in menu bar ");
+outtextxy(20,370,"    pop up will appear click on ' Date or Time '");
+outtextxy(20,385,"    it will display the date or time.");
+outtextxy(20,400,">   At last for help click on ' Help 'in menu bar.");
+outtextxy(20,415,"    pop up will be appear, click on ' Help '");
+outtextxy(20,430,"    it will display help.");
+getch();
+}
